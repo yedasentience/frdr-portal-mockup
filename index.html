@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open-Field Virtual Library — Szechtman Lab Collection (mockup)</title>
+
+  <!--
+    ============================================================================
+    LANDING-PAGE MOCKUP  ·  v1  ·  static design draft (no backend, no live data)
+    Stack decision: Option B (FastAPI + server-rendered HTML + Tailwind + HTMX).
+    This file uses the Tailwind "Play CDN" so it opens in any browser with no
+    install. In the real build, Tailwind is compiled and these pages become
+    FastAPI templates. NOTE: the site NAME below ("Open-Field Virtual Library")
+    is a PLACEHOLDER for Henry to decide.
+    ============================================================================
+  -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            // Distinct scholarly-modern identity (not the capstones' look)
+            parchment: '#f7f4ee',
+            ink: '#1c2321',
+            pine: { DEFAULT: '#114b45', 700: '#0e4039', 600: '#155e57' },
+            clay: { DEFAULT: '#c2683a', 600: '#b15a2f' },
+            sand: '#e8e1d4',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { -webkit-font-smoothing: antialiased; }
+    .hero-grid { background-image: radial-gradient(rgba(17,75,69,0.07) 1px, transparent 1px); background-size: 22px 22px; }
+  </style>
+</head>
+
+<body class="bg-parchment text-ink font-sans antialiased">
+
+  <!-- mockup ribbon -->
+  <div class="bg-clay text-white text-center text-xs tracking-wide py-1.5 font-medium">
+    DESIGN MOCKUP · static preview · figures shown are real collection totals, the page is not yet wired to live data
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-parchment/85 border-b border-sand">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5">
+        <!-- mark: open-field square with a path -->
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" class="shrink-0">
+          <rect x="2.5" y="2.5" width="27" height="27" rx="4" stroke="#114b45" stroke-width="2"/>
+          <path d="M8 22 C 12 10, 20 24, 24 11" stroke="#c2683a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="24" cy="11" r="2.4" fill="#114b45"/>
+        </svg>
+        <span class="font-display text-lg font-600 text-pine leading-none">Open-Field Virtual Library
+          <span class="block text-[10px] font-sans tracking-wide text-ink/50 font-500">SZECHTMAN LAB COLLECTION</span>
+        </span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-500">
+        <a href="#idea" class="hover:text-pine transition">The idea</a>
+        <a href="#understand" class="hover:text-pine transition">Understand</a>
+        <a href="#explore" class="hover:text-pine transition">Explore &amp; Take</a>
+        <a href="#analyze" class="hover:text-pine transition">Visualize &amp; Analyze</a>
+        <a href="#" class="px-4 py-2 rounded-full bg-pine text-white hover:bg-pine-700 transition">Sign in</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero-grid border-b border-sand">
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <p class="text-clay font-600 tracking-wide text-sm mb-4">AN OPEN-SCIENCE VIRTUAL LIBRARY OF BEHAVIORAL PERFORMANCE</p>
+        <h1 class="font-display text-4xl md:text-6xl font-600 leading-[1.05] max-w-3xl">
+          Twenty-nine datasets, collected over fifteen years — searchable as
+          <span class="text-pine italic">one big dataset.</span>
+        </h1>
+        <p class="mt-6 text-lg text-ink/70 max-w-2xl leading-relaxed">
+          The Szechtman Lab Collection holds nearly two decades of open-field behavioral trials from an
+          animal model of OCD. A <strong>session-centric</strong> annotation makes every trial an
+          independent, fully-described unit — so you can find, assemble, and analyze exactly the
+          sessions you need, across experiments and years.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#explore" class="px-6 py-3 rounded-full bg-pine text-white font-500 hover:bg-pine-700 transition">Explore the library →</a>
+          <a href="#idea" class="px-6 py-3 rounded-full border border-pine/30 text-pine font-500 hover:bg-pine/5 transition">Understand the idea</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THE BIG IDEA ===================== -->
+    <section id="idea" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="font-display text-3xl font-600 mb-5">From study-centric to <span class="text-pine">session-centric</span></h2>
+        <p class="text-ink/70 leading-relaxed mb-4">
+          Traditionally, behavioral data are nested inside one study (Study → Groups → Subjects → Sessions),
+          which makes them hard to reuse across experiments. Here, each <strong>session is treated as a discrete
+          event</strong>, described by its own metadata under the four headings of a Methods section.
+        </p>
+        <p class="text-ink/70 leading-relaxed">
+          That single shift is what lets sessions run years apart, for different hypotheses, be queried together
+          on shared parameters — turning 29 separate deposits into one functional library.
+        </p>
+        <p class="mt-5 text-sm text-ink/50">
+          Based on Szechtman, Dvorkin-Gheva &amp; Gomez-Marin, <em>GigaScience</em> (2022).
+        </p>
+      </div>
+
+      <!-- concept diagram -->
+      <div class="bg-white rounded-2xl border border-sand p-8 shadow-sm">
+        <svg viewBox="0 0 360 230" class="w-full h-auto">
+          <g font-family="Inter, sans-serif" font-size="11">
+            <!-- four headings -->
+            <g>
+              <rect x="6"  y="14"  width="120" height="34" rx="8" fill="#e8e1d4"/>
+              <text x="66" y="35" text-anchor="middle" fill="#1c2321" font-weight="600">Apparatus</text>
+            </g>
+            <g>
+              <rect x="6"  y="92"  width="120" height="34" rx="8" fill="#e8e1d4"/>
+              <text x="66" y="113" text-anchor="middle" fill="#1c2321" font-weight="600">Subjects</text>
+            </g>
+            <g>
+              <rect x="6"  y="170" width="120" height="34" rx="8" fill="#e8e1d4"/>
+              <text x="66" y="191" text-anchor="middle" fill="#1c2321" font-weight="600">Treatment</text>
+            </g>
+            <g>
+              <rect x="234" y="92" width="120" height="34" rx="8" fill="#e8e1d4"/>
+              <text x="294" y="113" text-anchor="middle" fill="#1c2321" font-weight="600">Procedure</text>
+            </g>
+            <!-- center session hub -->
+            <circle cx="180" cy="109" r="40" fill="#114b45"/>
+            <text x="180" y="105" text-anchor="middle" fill="#fff" font-weight="600">session</text>
+            <text x="180" y="119" text-anchor="middle" fill="#bfe0da" font-size="9">one trial</text>
+            <!-- connectors -->
+            <g stroke="#c2683a" stroke-width="1.6" fill="none">
+              <path d="M126 31 C 160 40, 160 80, 168 80"/>
+              <path d="M126 109 L 140 109"/>
+              <path d="M126 187 C 160 178, 160 138, 168 138"/>
+              <path d="M234 109 L 220 109"/>
+            </g>
+          </g>
+        </svg>
+        <p class="text-center text-xs text-ink/50 mt-3">Every session is described under four Methods headings, then queried as one unit.</p>
+      </div>
+    </section>
+
+    <!-- ===================== METHODS HEADINGS ===================== -->
+    <section class="bg-white border-y border-sand">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="font-display text-2xl font-600 text-center mb-10">The four annotation headings</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="rounded-xl border border-sand p-6">
+            <h3 class="font-display text-lg font-600 text-pine mb-2">Apparatus</h3>
+            <p class="text-sm text-ink/60">Open-field ID, object-pattern configuration, lighting.</p>
+          </div>
+          <div class="rounded-xl border border-sand p-6">
+            <h3 class="font-display text-lg font-600 text-pine mb-2">Subjects</h3>
+            <p class="text-sm text-ink/60">Rat ID, brain-manipulation status, body weight, early-life handling.</p>
+          </div>
+          <div class="rounded-xl border border-sand p-6">
+            <h3 class="font-display text-lg font-600 text-pine mb-2">Treatment</h3>
+            <p class="text-sm text-ink/60">Drug, dose, injection number, brain region / lesion / sham.</p>
+          </div>
+          <div class="rounded-xl border border-sand p-6">
+            <h3 class="font-display text-lg font-600 text-pine mb-2">Procedure</h3>
+            <p class="text-sm text-ink/60">Session type, tester, date &amp; time, environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+        <div><div class="font-display text-4xl font-600 text-pine">20,491</div><div class="text-sm text-ink/55 mt-1">behavioral sessions</div></div>
+        <div><div class="font-display text-4xl font-600 text-pine">1,758</div><div class="text-sm text-ink/55 mt-1">rats</div></div>
+        <div><div class="font-display text-4xl font-600 text-pine">29</div><div class="text-sm text-ink/55 mt-1">datasets (Q17–Q48)</div></div>
+        <div><div class="font-display text-4xl font-600 text-pine">43</div><div class="text-sm text-ink/55 mt-1">experiments · 12 projects</div></div>
+        <div><div class="font-display text-4xl font-600 text-clay">~13 TB</div><div class="text-sm text-ink/55 mt-1">of raw data</div></div>
+        <div><div class="font-display text-4xl font-600 text-clay">168,467</div><div class="text-sm text-ink/55 mt-1">files</div></div>
+        <div><div class="font-display text-4xl font-600 text-clay">3</div><div class="text-sm text-ink/55 mt-1">raw types: video · track · path-plot</div></div>
+        <div><div class="font-display text-4xl font-600 text-clay">2001–2015</div><div class="text-sm text-ink/55 mt-1">years of research</div></div>
+      </div>
+    </section>
+
+    <!-- ===================== THREE ZONES ===================== -->
+    <section class="bg-pine text-parchment">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <h2 class="font-display text-3xl font-600 text-center mb-3">Three ways in</h2>
+        <p class="text-center text-parchment/70 max-w-2xl mx-auto mb-12">
+          The library is one site with three connected zones. Newcomers can follow them in order;
+          returning researchers jump straight to what they need.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- Zone 1 -->
+          <a href="#understand" class="group bg-parchment text-ink rounded-2xl p-7 hover:-translate-y-1 transition">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display text-2xl font-700 text-clay">①</span>
+              <h3 class="font-display text-xl font-600">Understand</h3>
+            </div>
+            <p class="text-sm text-ink/65 mb-4">Learn what the collection is and how the session-centric idea works — and see what's inside.</p>
+            <ul class="text-sm text-ink/55 space-y-1.5">
+              <li>· The concept &amp; annotation schema</li>
+              <li>· Overview of the holdings</li>
+              <li>· How to cite &amp; reuse</li>
+            </ul>
+            <p class="text-xs text-clay font-600 mt-5">For newcomers &amp; would-be replicators →</p>
+          </a>
+
+          <!-- Zone 2 -->
+          <a href="#explore" class="group bg-parchment text-ink rounded-2xl p-7 hover:-translate-y-1 transition ring-2 ring-clay">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display text-2xl font-700 text-clay">②</span>
+              <h3 class="font-display text-xl font-600">Explore &amp; Take</h3>
+            </div>
+            <p class="text-sm text-ink/65 mb-4">Filter the sessions you want — by drug, dose, brain region, and more, or just ask in plain English — then take the data with you.</p>
+            <ul class="text-sm text-ink/55 space-y-1.5">
+              <li>· Search facets + natural-language query</li>
+              <li>· Build &amp; save a named set</li>
+              <li>· Export files, metadata &amp; summary stats</li>
+            </ul>
+            <p class="text-xs text-clay font-600 mt-5">For ML researchers, students &amp; analysts →</p>
+          </a>
+
+          <!-- Zone 3 -->
+          <a href="#analyze" class="group bg-parchment text-ink rounded-2xl p-7 hover:-translate-y-1 transition">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display text-2xl font-700 text-clay">③</span>
+              <h3 class="font-display text-xl font-600">Visualize &amp; Analyze</h3>
+            </div>
+            <p class="text-sm text-ink/65 mb-4">See and study your selected sessions — from a synchronized video+track player to publication-style figures.</p>
+            <ul class="text-sm text-ink/55 space-y-1.5">
+              <li>· Video + locomotion-track player</li>
+              <li>· Path-plot collages &amp; track views</li>
+              <li>· Tucci &amp; Ballester graphs from measures</li>
+            </ul>
+            <p class="text-xs text-clay font-600 mt-5">For behavioral-neuroscience researchers →</p>
+          </a>
+        </div>
+
+        <p class="text-center text-parchment/60 text-sm mt-10">
+          The thread that connects them: a <strong class="text-parchment">selected set of sessions</strong> you build in ② and carry into ③.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== PROVENANCE STRIP ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <p class="text-ink/60 max-w-3xl mx-auto leading-relaxed">
+        The raw data live in Canada's <strong>FRDR</strong> repository under the
+        <a href="https://www.frdr-dfdr.ca/repo/collection/szechtmanlab" class="text-pine underline decoration-clay/40 hover:decoration-clay">Szechtman Lab Collection</a>.
+        This library is a <em>portal</em> to that repository — it helps you find and assemble data; FRDR holds the files.
+      </p>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-parchment/80">
+    <div class="max-w-6xl mx-auto px-6 py-14 grid sm:grid-cols-3 gap-10 text-sm">
+      <div>
+        <div class="font-display text-lg font-600 text-parchment mb-3">Open-Field Virtual Library</div>
+        <p class="text-parchment/55">A practical template for collating session-centric behavioral data into a reusable open-science library.</p>
+      </div>
+      <div>
+        <div class="font-600 text-parchment mb-3">Data &amp; citation</div>
+        <ul class="space-y-2 text-parchment/60">
+          <li><a href="https://doi.org/10.1093/gigascience/giac092" class="hover:text-parchment">GigaScience (2022) paper</a></li>
+          <li><a href="https://www.frdr-dfdr.ca/repo/collection/szechtmanlab" class="hover:text-parchment">FRDR collection</a></li>
+          <li><a href="#" class="hover:text-parchment">How to cite</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-600 text-parchment mb-3">Project</div>
+        <ul class="space-y-2 text-parchment/60">
+          <li><a href="#" class="hover:text-parchment">About &amp; team</a></li>
+          <li><a href="#" class="hover:text-parchment">Documentation</a></li>
+          <li><a href="#" class="hover:text-parchment">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6 py-5 text-xs text-parchment/40 flex flex-wrap justify-between gap-2">
+        <span>McMaster University · Szechtman Lab</span>
+        <span>Design mockup — site name is a placeholder</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
