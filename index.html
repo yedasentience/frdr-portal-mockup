@@ -61,17 +61,28 @@
         <!-- mark: open-field path-plot, after GigaScience Fig 1 (quinpirole panel) -->
         <svg width="30" height="30" viewBox="0 0 32 32" fill="none" class="shrink-0">
           <rect x="2.5" y="2.5" width="27" height="27" rx="5" fill="#fbfaf7" stroke="#114b45" stroke-width="2"/>
-          <!-- green objects (apparatus pattern) -->
-          <rect x="7" y="7" width="3.4" height="3.4" rx="1" fill="#4ea832"/>
-          <rect x="21.6" y="7" width="3.4" height="3.4" rx="1" fill="#4ea832"/>
-          <rect x="7" y="21.6" width="3.4" height="3.4" rx="1" fill="#4ea832"/>
-          <rect x="21.6" y="21.6" width="3.4" height="3.4" rx="1" fill="#4ea832"/>
-          <!-- stereotyped locomotion path -->
-          <g stroke="#1c2321" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
-            <path d="M22 22 C 15 16, 12 13, 9 9"/>
-            <path d="M9.5 22 C 15 17, 16 15, 22 9.5"/>
-            <path d="M14 14 c -2 1.5, 0 3.5, 2 2.5 c 2 -1, 0 -3.5, -2.2 -2.3"/>
+          <!-- faint grid -->
+          <g stroke="#114b45" stroke-width="0.5" opacity="0.12">
+            <path d="M12 3 V29 M21 3 V29 M3 12 H29 M3 21 H29"/>
           </g>
+          <!-- green objects (apparatus pattern) -->
+          <g fill="#4ea832">
+            <rect x="6.6" y="6.6" width="3.2" height="3.2" rx="0.8"/>
+            <rect x="22.2" y="6.6" width="3.2" height="3.2" rx="0.8"/>
+            <rect x="6.6" y="22.2" width="3.2" height="3.2" rx="0.8"/>
+            <rect x="22.2" y="22.2" width="3.2" height="3.2" rx="0.8"/>
+          </g>
+          <!-- stereotyped (quinpirole) path: dense crossing routes + home base -->
+          <g stroke="#1c2321" fill="none" stroke-linecap="round" opacity="0.92">
+            <path d="M8.5 23.5 L23.5 8.5" stroke-width="1.5"/>
+            <path d="M9.6 23 L23 9.4" stroke-width="0.9"/>
+            <path d="M8 22.2 L22.2 8" stroke-width="0.7"/>
+            <path d="M8.5 8.5 L23.5 23.5" stroke-width="1.3"/>
+            <path d="M9.6 9 L22.6 22" stroke-width="0.7"/>
+            <path d="M16 16 C12 13, 9.5 9.5, 8.2 8.2" stroke-width="0.7"/>
+            <path d="M16 16 C20 19, 22 21, 23.4 22.6" stroke-width="0.7"/>
+          </g>
+          <circle cx="16" cy="16" r="1.7" fill="#1c2321"/>
         </svg>
         <span class="font-display text-lg font-600 text-pine leading-none">Open-Field Virtual Library
           <span class="block text-[10px] font-sans tracking-wide text-ink/50 font-500">SZECHTMAN LAB COLLECTION</span>
@@ -263,9 +274,9 @@
 
         <p class="text-center text-parchment/60 text-sm mt-10">
           The thread that connects them: a <strong class="text-parchment">selected set of sessions</strong> you build in
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-parchment text-pine font-700 text-xs align-middle">2</span>
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-clay text-white font-700 text-xs align-middle">2</span>
           and carry into
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-parchment text-pine font-700 text-xs align-middle">3</span>.
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-clay text-white font-700 text-xs align-middle">3</span>.
         </p>
       </div>
     </section>
