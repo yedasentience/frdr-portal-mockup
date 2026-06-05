@@ -102,22 +102,43 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero-grid border-b border-sand">
-      <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <p class="text-clay font-600 tracking-wide text-sm mb-4">AN OPEN-SCIENCE VIRTUAL LIBRARY OF BEHAVIORAL PERFORMANCE</p>
-        <h1 class="font-display text-4xl md:text-6xl font-600 leading-[1.05] max-w-3xl">
-          Twenty-nine datasets, collected over fifteen years — searchable as
-          <span class="text-pine italic">one big dataset.</span>
-        </h1>
-        <p class="mt-6 text-lg text-ink/70 max-w-2xl leading-relaxed">
-          The Szechtman Lab Collection holds nearly two decades of open-field behavioral trials from an
-          animal model of OCD. A <strong>session-centric</strong> annotation makes every trial an
-          independent, fully-described unit — so you can find, assemble, and analyze exactly the
-          sessions you need, across experiments and years.
-        </p>
-        <div class="mt-9 flex flex-wrap gap-3">
-          <a href="#explore" class="px-6 py-3 rounded-full bg-pine text-white font-500 hover:bg-pine-700 transition">Explore the library →</a>
-          <a href="#idea" class="px-6 py-3 rounded-full border border-pine/30 text-pine font-500 hover:bg-pine/5 transition">Understand the idea</a>
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div>
+          <p class="text-clay font-600 tracking-wide text-sm mb-4">AN OPEN-SCIENCE VIRTUAL LIBRARY OF BEHAVIORAL PERFORMANCE</p>
+          <h1 class="font-display text-4xl md:text-5xl font-600 leading-[1.05]">
+            Twenty-nine datasets, collected over fifteen years — searchable as
+            <span class="text-pine italic">one big dataset.</span>
+          </h1>
+          <p class="mt-6 text-lg text-ink/70 leading-relaxed">
+            The Szechtman Lab Collection holds nearly two decades of open-field behavioral trials from an
+            animal model of OCD. A <strong>session-centric</strong> annotation makes every trial an
+            independent, fully-described unit — so you can find, assemble, and analyze exactly the
+            sessions you need, across experiments and years.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#explore" class="px-6 py-3 rounded-full bg-pine text-white font-500 hover:bg-pine-700 transition">Explore the library →</a>
+            <a href="#idea" class="px-6 py-3 rounded-full border border-pine/30 text-pine font-500 hover:bg-pine/5 transition">Understand the idea</a>
+          </div>
         </div>
+
+        <!-- hero figure: two open-field path-plots (the OCD model's signature) -->
+        <figure class="md:justify-self-end">
+          <div class="grid grid-cols-2 gap-4 max-w-md">
+            <div class="text-center">
+              <img src="Saline_Q26NAc2049_10_0_0494_0005994_512x512.png" alt="Open-field locomotion path-plot of a saline-treated rat: dispersed exploration" loading="lazy" class="w-full rounded-xl border border-sand bg-white shadow-sm" />
+              <figcaption class="mt-2"><span class="block font-display font-600 text-ink">Saline</span><span class="block text-xs text-ink/55">normal exploration</span></figcaption>
+            </div>
+            <div class="text-center">
+              <img src="Quinpirole_Q26NAc2018_10_5_0505_0005573_512x512.png" alt="Open-field locomotion path-plot of a quinpirole-treated rat: stereotyped compulsive checking" loading="lazy" class="w-full rounded-xl border-2 border-clay/60 bg-white shadow-sm" />
+              <figcaption class="mt-2"><span class="block font-display font-600 text-clay">Quinpirole</span><span class="block text-xs text-ink/55">compulsive checking</span></figcaption>
+            </div>
+          </div>
+          <figcaption class="mt-4 text-xs text-ink/50 max-w-md leading-relaxed">
+            One 55-minute open-field session each. The drug-induced shift from free exploration to a fixed,
+            repetitive route is the behavioral signature of the OCD model.
+            <span class="text-ink/40">After GigaScience (2022), Fig. 1.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
