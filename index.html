@@ -60,17 +60,17 @@
       <a href="#top" class="flex items-center gap-2.5">
         <!-- mark: open-field path-plot, after GigaScience Fig 1 (quinpirole panel) -->
         <svg width="30" height="30" viewBox="0 0 32 32" fill="none" class="shrink-0">
-          <rect x="2.5" y="2.5" width="27" height="27" rx="5" fill="#fbfaf7" stroke="#114b45" stroke-width="2"/>
+          <rect x="2.5" y="2.5" width="27" height="27" rx="0" fill="#fbfaf7" stroke="#114b45" stroke-width="2"/>
           <!-- faint grid -->
           <g stroke="#114b45" stroke-width="0.5" opacity="0.12">
             <path d="M12 3 V29 M21 3 V29 M3 12 H29 M3 21 H29"/>
           </g>
           <!-- green objects (apparatus pattern) -->
           <g fill="#4ea832">
-            <rect x="6.6" y="6.6" width="3.2" height="3.2" rx="0.8"/>
-            <rect x="22.2" y="6.6" width="3.2" height="3.2" rx="0.8"/>
-            <rect x="6.6" y="22.2" width="3.2" height="3.2" rx="0.8"/>
-            <rect x="22.2" y="22.2" width="3.2" height="3.2" rx="0.8"/>
+            <rect x="6.6" y="6.6" width="3.2" height="3.2" rx="0"/>
+            <rect x="22.2" y="6.6" width="3.2" height="3.2" rx="0"/>
+            <rect x="6.6" y="22.2" width="3.2" height="3.2" rx="0"/>
+            <rect x="22.2" y="22.2" width="3.2" height="3.2" rx="0"/>
           </g>
           <!-- stereotyped (quinpirole) path: dense crossing routes + home base -->
           <g stroke="#1c2321" fill="none" stroke-linecap="round" opacity="0.92">
@@ -148,7 +148,7 @@
         <h2 class="font-display text-3xl font-600 mb-5">From study-centric to <span class="text-pine">session-centric</span></h2>
         <p class="text-ink/70 leading-relaxed mb-4">
           Traditionally, behavioural data are nested inside one study (Study → Groups → Subjects → Sessions),
-          which makes them hard to reuse across experiments. Here, each <strong>session is treated as a discrete
+          and the metadata describe the study and its groups as a whole, not the individual session — so a session can't easily be lifted out and recombined with sessions from other experiments. Here, each <strong>session is treated as a discrete
           event</strong>, described by its own metadata under the four headings of a Methods section in a behavioural neuroscience research paper.
         </p>
         <p class="text-ink/70 leading-relaxed">
