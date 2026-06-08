@@ -35,7 +35,7 @@
   <style>
     body { -webkit-font-smoothing: antialiased; }
     .hero-grid { background-image: radial-gradient(rgba(17,75,69,0.07) 1px, transparent 1px); background-size: 22px 22px; }
-    .field { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: #ece6da; color: #0e4039; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+    .field { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: #ece6da; color: #0e4039; padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
   </style>
 </head>
 
@@ -222,7 +222,7 @@
             <img src="pathplot_saline.png" alt="Locomotion path-plot of the saline session" class="w-[44%] border-2 border-pine/60 bg-white" />
           </div>
           <figcaption class="mt-3 text-center text-sm">
-            <span class="font-display font-600 text-pine">Saline</span> — session Q23U693033, injection 8<br>
+            <span class="font-display font-600 text-pine">Saline</span> session — rat Q23U693033, injection 8<br>
             <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
           </figcaption>
         </figure>
@@ -235,14 +235,14 @@
             <img src="pathplot_quinpirole.png" alt="Locomotion path-plot of the quinpirole session" class="w-[44%] border-2 border-clay/60 bg-white" />
           </div>
           <figcaption class="mt-3 text-center text-sm">
-            <span class="font-display font-600 text-clay">Quinpirole</span> — session Q23U693032, injection 8<br>
+            <span class="font-display font-600 text-clay">Quinpirole</span> session — rat Q23U693032, injection 8<br>
             <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
           </figcaption>
         </figure>
       </div>
       <p class="text-center text-sm text-ink/50 max-w-3xl mx-auto mt-6">
-        Each video and path-plot are the <strong>same session</strong> — raw behaviour on the left, its
-        summary on the right. Later, the toolbox can play the video and its track <em>in sync</em>.
+        Each video and path-plot are of the <strong>same entire 55 min long session</strong> — raw behaviour on the
+        left, its paths of locomotion on the right. Later, the toolbox can play the video and its track <em>in sync</em>.
       </p>
     </section>
 
