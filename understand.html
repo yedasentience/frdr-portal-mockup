@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <script>
     tailwind.config = {
@@ -19,6 +19,7 @@
           fontFamily: {
             display: ['Fraunces', 'Georgia', 'serif'],
             sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
           },
           colors: {
             parchment: '#f7f4ee',
@@ -34,6 +35,7 @@
   <style>
     body { -webkit-font-smoothing: antialiased; }
     .hero-grid { background-image: radial-gradient(rgba(17,75,69,0.07) 1px, transparent 1px); background-size: 22px 22px; }
+    .field { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: #ece6da; color: #0e4039; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
   </style>
 </head>
 
@@ -71,7 +73,8 @@
         </span>
       </a>
       <div class="hidden md:flex items-center gap-7 text-sm font-500">
-        <a href="understand.html" class="text-pine font-600">Understand</a>
+        <a href="index.html#idea" class="hover:text-pine transition">The idea</a>
+        <span class="text-ink/35 font-600 cursor-default" aria-current="page">Understand</span>
         <a href="index.html#explore" class="hover:text-pine transition">Explore &amp; Take</a>
         <a href="index.html#analyze" class="hover:text-pine transition">Visualize &amp; Analyze</a>
         <a href="#" class="px-4 py-2 rounded-full bg-pine text-white hover:bg-pine-700 transition">Sign in</a>
@@ -84,18 +87,24 @@
     <!-- ===================== PAGE INTRO ===================== -->
     <section class="hero-grid border-b border-sand">
       <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
-        <p class="text-clay font-600 tracking-wide text-sm mb-3">① UNDERSTAND</p>
+        <p class="flex items-center gap-2 text-clay font-600 tracking-wide text-sm mb-4">
+          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-clay text-white font-display font-700 text-xs">1</span>
+          UNDERSTAND
+        </p>
         <h1 class="font-display text-4xl md:text-5xl font-600 leading-[1.08]">What this library is, and the idea that makes it work</h1>
-        <p class="mt-5 text-lg text-ink/70 leading-relaxed max-w-2xl">
-          The Open-Field Virtual Library turns 29 separately-published datasets into one searchable
-          collection of behavioural performance. The key is a shift in how each trial is described.
-          Here's the idea, what's inside, and how to use and cite it.
+        <p class="mt-5 text-lg text-ink/70 leading-relaxed max-w-3xl">
+          The Open-Field Virtual Library contains raw data objects of rodent spontaneous activity in an
+          open field, obtained in the course of 43 experiments and deposited as 29 datasets in the FRDR
+          repository. Uniquely, the library is one searchable collection of rodent spontaneous activity
+          in the open field during repeated testing and after treatment with drugs or brain lesions.
+          This is made possible by a conceptual shift in how the data is annotated. Here's the idea,
+          what's inside, and how to use and cite it.
         </p>
       </div>
     </section>
 
     <!-- ===================== THE SHIFT ===================== -->
-    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+    <section id="idea" class="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="font-display text-3xl font-600 mb-5">From <span class="text-ink/55">study-centric</span> to <span class="text-pine">session-centric</span></h2>
         <p class="text-ink/70 leading-relaxed mb-4">
@@ -112,8 +121,9 @@
           queried <em>together</em> on shared parameters.
         </p>
         <p class="text-ink/70 leading-relaxed">
-          That single shift is what makes 29 deposits behave as <strong>one functional dataset</strong>
-          — and it's a template any lab can reuse for its own well-characterized behavioural collection.
+          That <strong>singular conceptual shift</strong> is what makes 29 deposits behave as one
+          functional dataset — and it's a template any lab can reuse for its own well-characterized
+          behavioural collection.
         </p>
         <p class="mt-5 text-sm text-ink/50">Introduced in Szechtman, Dvorkin-Gheva &amp; Gomez-Marin, <em>GigaScience</em> (2022).</p>
       </div>
@@ -141,71 +151,99 @@
       </div>
     </section>
 
-    <!-- ===================== FOUR HEADINGS (detailed) ===================== -->
+    <!-- ===================== FOUR HEADINGS (database fields) ===================== -->
     <section class="bg-white border-y border-sand">
       <div class="max-w-6xl mx-auto px-6 py-16">
         <h2 class="font-display text-2xl font-600 text-center mb-3">The four annotation headings</h2>
-        <p class="text-center text-ink/60 max-w-2xl mx-auto mb-10">Every session is tagged with values under each heading — these become the variables you search and filter on.</p>
+        <p class="text-center text-ink/60 max-w-2xl mx-auto mb-10">
+          Each session is tagged under these headings. The labels below are the actual database fields you
+          search and filter on, with example values in brackets.
+        </p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div class="rounded-xl border border-sand p-6">
             <h3 class="font-display text-lg font-600 text-pine mb-3">Apparatus</h3>
-            <ul class="text-sm text-ink/65 space-y-1.5">
-              <li>Open-field arena (160×160 cm)</li>
-              <li>Object-pattern configuration</li>
-              <li>Lighting (room lights on / dark)</li>
+            <ul class="text-sm text-ink/65 space-y-3">
+              <li><span class="field">apparatus_name</span><br>Open Field · Open Field fenced · Circular Arena Walled · Activity box</li>
+              <li><span class="field">pattern_description</span><br>object-pattern configuration (locales)</li>
+              <li><span class="field">testing_lights_on</span><br>lights on / dark</li>
             </ul>
           </div>
           <div class="rounded-xl border border-sand p-6">
             <h3 class="font-display text-lg font-600 text-pine mb-3">Subjects</h3>
-            <ul class="text-sm text-ink/65 space-y-1.5">
-              <li>Rat ID, sex, strain</li>
-              <li>Brain-manipulation status (unoperated / sham / lesion + ROI)</li>
-              <li>Body weight; early-life handling</li>
+            <ul class="text-sm text-ink/65 space-y-3">
+              <li><span class="field">legacy_rat_id</span> · <span class="field">sex</span> · <span class="field">strain</span></li>
+              <li><span class="field">surgery_type</span> + target <span class="field">region</span><br>unoperated / sham / lesion (NAc, BLA, OFC, IL, PIT)</li>
+              <li><span class="field">body_weight_grams</span> · <span class="field">early_life_handling</span></li>
             </ul>
           </div>
           <div class="rounded-xl border border-sand p-6">
             <h3 class="font-display text-lg font-600 text-pine mb-3">Treatment</h3>
-            <ul class="text-sm text-ink/65 space-y-1.5">
-              <li>Drug &amp; dose</li>
-              <li>Injection number (cumulative &amp; regimen)</li>
-              <li>Brain treatment (ROI, lesion, sham)</li>
+            <ul class="text-sm text-ink/65 space-y-3">
+              <li><span class="field">drug_abbreviation</span><br>QNP · SAL · DPAT · mCPP · …</li>
+              <li><span class="field">dose_given</span> + <span class="field">dose_unit</span><br>e.g. 0.5 mg/kg</li>
+              <li>brain treatment — lesion / sham at target ROI</li>
             </ul>
           </div>
           <div class="rounded-xl border border-sand p-6">
             <h3 class="font-display text-lg font-600 text-pine mb-3">Procedure</h3>
-            <ul class="text-sm text-ink/65 space-y-1.5">
-              <li>Session type</li>
-              <li>Tester; date &amp; time</li>
-              <li>Testing room; light cycle</li>
+            <ul class="text-sm text-ink/65 space-y-3">
+              <li><span class="field">session_type</span> · <span class="field">tester</span></li>
+              <li>injection number —<br><span class="field">cumulative_drug_injection_number</span> &amp; <span class="field">cumulative_injections_count_for_regimen</span></li>
+              <li><span class="field">session_timestamp</span> · testing room · light cycle</li>
             </ul>
           </div>
         </div>
+        <p class="text-center text-sm text-ink/55 max-w-3xl mx-auto mt-8">
+          Beyond these four headings, each session also carries its <strong>historical context</strong>
+          (the HISTORY layer) — its original project, experiment, group, and FRDR dataset (Q-code + DOI) —
+          all searchable too.
+        </p>
       </div>
     </section>
 
-    <!-- ===================== SEE A SESSION (video) ===================== -->
-    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center">
-      <figure>
-        <img src="open_field_trial.webp" alt="Animated top-down recording of a rat exploring the open field with object cubes" class="w-full max-w-md border-2 border-pine/60 bg-black/5" />
-        <figcaption class="mt-3 text-sm text-ink/55 max-w-md leading-relaxed">
-          An example open-field session, played at <strong>32× speed</strong> (a full session lasts
-          55 minutes). Illustrative only — this is <em>not</em> the session shown in the home-page
-          path-plots.
-        </figcaption>
-      </figure>
-      <div>
-        <h2 class="font-display text-3xl font-600 mb-5">What a session looks like</h2>
-        <p class="text-ink/70 leading-relaxed mb-4">
-          Each trial is a 55-minute recording of a single rat in the open field, captured from above.
-          From that video, the rat's moment-to-moment position is extracted as a <strong>track file</strong>
-          (XY coordinates over time), and summarized as a <strong>path-plot</strong> of the whole session.
-        </p>
+    <!-- ===================== SEE A SESSION (matched video → path-plot) ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <h2 class="font-display text-3xl font-600 mb-4">What a session looks like</h2>
         <p class="text-ink/70 leading-relaxed">
-          These are the raw data objects the library indexes — video, track file, and path-plot —
-          alongside pre-computed summary measures. Later, the toolbox can play a session's video and its
-          locomotion track <em>in sync</em>.
+          Each trial is a 55-minute recording of one rat in the open field, captured from above. From
+          that video the rat's position is extracted as a <strong>track file</strong> (XY coordinates over
+          time) and summarized as a <strong>path-plot</strong> of the whole session. These are the raw data
+          objects in the library, alongside smoothed track files and pre-computed summary measures.
         </p>
       </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Saline pair -->
+        <figure class="rounded-2xl border border-sand p-5">
+          <div class="flex items-center justify-center gap-3">
+            <video src="trial_saline.mp4" autoplay loop muted playsinline class="w-[44%] border-2 border-pine/60 bg-black/5"></video>
+            <span class="text-2xl text-ink/30">→</span>
+            <img src="pathplot_saline.png" alt="Locomotion path-plot of the saline session" class="w-[44%] border-2 border-pine/60 bg-white" />
+          </div>
+          <figcaption class="mt-3 text-center text-sm">
+            <span class="font-display font-600 text-pine">Saline</span> — session Q23U693033, injection 8<br>
+            <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
+          </figcaption>
+        </figure>
+
+        <!-- Quinpirole pair -->
+        <figure class="rounded-2xl border border-sand p-5">
+          <div class="flex items-center justify-center gap-3">
+            <video src="trial_quinpirole.mp4" autoplay loop muted playsinline class="w-[44%] border-2 border-clay/60 bg-black/5"></video>
+            <span class="text-2xl text-ink/30">→</span>
+            <img src="pathplot_quinpirole.png" alt="Locomotion path-plot of the quinpirole session" class="w-[44%] border-2 border-clay/60 bg-white" />
+          </div>
+          <figcaption class="mt-3 text-center text-sm">
+            <span class="font-display font-600 text-clay">Quinpirole</span> — session Q23U693032, injection 8<br>
+            <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="text-center text-sm text-ink/50 max-w-3xl mx-auto mt-6">
+        Each video and path-plot are the <strong>same session</strong> — raw behaviour on the left, its
+        summary on the right. Later, the toolbox can play the video and its track <em>in sync</em>.
+      </p>
     </section>
 
     <!-- ===================== WHAT'S INSIDE ===================== -->
@@ -229,8 +267,8 @@
             <p class="text-sm text-parchment/75">~20 drug treatments; brain manipulations targeting NAc, BLA, OFC, IL, PIT (lesion / sham / unoperated).</p>
           </div>
           <div class="bg-parchment/10 rounded-xl p-6">
-            <h3 class="font-display text-lg font-600 mb-2">Summary measures</h3>
-            <p class="text-sm text-parchment/75">Pre-computed checking, locomotion, spatial dispersion, path stereotypy &amp; time-course measures.</p>
+            <h3 class="font-display text-lg font-600 mb-2">Smoothed tracks &amp; measures</h3>
+            <p class="text-sm text-parchment/75">Smoothed track files (pre-processed to remove digitizing noise) plus pre-computed checking, locomotion, spatial-dispersion, path-stereotypy and time-course measures.</p>
           </div>
         </div>
       </div>
@@ -260,8 +298,9 @@
           <p class="text-ink/70 leading-relaxed">
             The data are open for analyses well beyond their original purpose — machine learning,
             teaching, and new questions. And the session-centric approach is a <strong>template</strong>:
-            other labs can build their own collection of well-characterized open-field behaviour and
-            deposit it in a public repository the same way.
+            other labs can build their own collection of well-characterized open-field behaviour — or of
+            performance in any clearly-defined standard apparatus — and deposit it in a public repository
+            the same way.
           </p>
         </div>
         <div>
