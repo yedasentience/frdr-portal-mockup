@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <script>
     tailwind.config = {
@@ -19,7 +19,6 @@
           fontFamily: {
             display: ['Fraunces', 'Georgia', 'serif'],
             sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
           },
           colors: {
             parchment: '#f7f4ee',
@@ -35,7 +34,6 @@
   <style>
     body { -webkit-font-smoothing: antialiased; }
     .hero-grid { background-image: radial-gradient(rgba(17,75,69,0.07) 1px, transparent 1px); background-size: 22px 22px; }
-    .field { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: #ece6da; color: #0e4039; padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
   </style>
 </head>
 
@@ -116,9 +114,10 @@
         </p>
         <p class="text-ink/70 leading-relaxed mb-4">
           The session-centric schema flips this: <strong>every session is a discrete event</strong>,
-          fully described by its own metadata under the four headings of a Methods section. Because each
-          session now stands on its own, sessions run years apart, for different hypotheses, can be
-          queried <em>together</em> on shared parameters.
+          fully described by its own metadata under the four headings of a Methods section —
+          <em>Apparatus, Subjects, Treatment, Procedure</em>. Because each session now stands on its own,
+          sessions run years apart, for different hypotheses, can be queried <em>together</em> on shared
+          parameters.
         </p>
         <p class="text-ink/70 leading-relaxed">
           That <strong>singular conceptual shift</strong> is what makes 29 deposits behave as one
@@ -151,98 +150,67 @@
       </div>
     </section>
 
-    <!-- ===================== FOUR HEADINGS (database fields) ===================== -->
+    <!-- ===================== SEE A SESSION (matched video → path-plot) ===================== -->
     <section class="bg-white border-y border-sand">
-      <div class="max-w-6xl mx-auto px-6 py-16">
-        <h2 class="font-display text-2xl font-600 text-center mb-3">The four annotation headings</h2>
-        <p class="text-center text-ink/60 max-w-2xl mx-auto mb-10">
-          Each session is tagged under these headings. The labels below are the actual database fields you
-          search and filter on, with example values in brackets.
-        </p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div class="rounded-xl border border-sand p-6">
-            <h3 class="font-display text-lg font-600 text-pine mb-3">Apparatus</h3>
-            <ul class="text-sm text-ink/65 space-y-3">
-              <li><span class="field">apparatus_name</span><br>Open Field · Open Field fenced · Circular Arena Walled · Activity box</li>
-              <li><span class="field">pattern_description</span><br>object-pattern configuration (locales)</li>
-              <li><span class="field">testing_lights_on</span><br>lights on / dark</li>
-            </ul>
-          </div>
-          <div class="rounded-xl border border-sand p-6">
-            <h3 class="font-display text-lg font-600 text-pine mb-3">Subjects</h3>
-            <ul class="text-sm text-ink/65 space-y-3">
-              <li><span class="field">legacy_rat_id</span> · <span class="field">sex</span> · <span class="field">strain</span></li>
-              <li><span class="field">surgery_type</span> + target <span class="field">region</span><br>unoperated / sham / lesion (NAc, BLA, OFC, IL, PIT)</li>
-              <li><span class="field">body_weight_grams</span> · <span class="field">early_life_handling</span></li>
-            </ul>
-          </div>
-          <div class="rounded-xl border border-sand p-6">
-            <h3 class="font-display text-lg font-600 text-pine mb-3">Treatment</h3>
-            <ul class="text-sm text-ink/65 space-y-3">
-              <li><span class="field">drug_abbreviation</span><br>QNP · SAL · DPAT · mCPP · …</li>
-              <li><span class="field">dose_given</span> + <span class="field">dose_unit</span><br>e.g. 0.5 mg/kg</li>
-              <li>brain treatment — lesion / sham at target ROI</li>
-            </ul>
-          </div>
-          <div class="rounded-xl border border-sand p-6">
-            <h3 class="font-display text-lg font-600 text-pine mb-3">Procedure</h3>
-            <ul class="text-sm text-ink/65 space-y-3">
-              <li><span class="field">session_type</span> · <span class="field">tester</span></li>
-              <li>injection number —<br><span class="field">cumulative_drug_injection_number</span> &amp; <span class="field">cumulative_injections_count_for_regimen</span></li>
-              <li><span class="field">session_timestamp</span> · testing room · light cycle</li>
-            </ul>
-          </div>
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+          <h2 class="font-display text-3xl font-600 mb-4">What a session looks like</h2>
+          <p class="text-ink/70 leading-relaxed">
+            Each trial is a 55-minute recording of one rat in the open field, captured from above. From
+            that video the rat's position is extracted as a <strong>track file</strong> (XY coordinates over
+            time) and summarized as a <strong>path-plot</strong> of the whole session. These are the raw data
+            objects in the library, alongside smoothed track files and pre-computed summary measures.
+          </p>
         </div>
-        <p class="text-center text-sm text-ink/55 max-w-3xl mx-auto mt-8">
-          Beyond these four headings, each session also carries its <strong>historical context</strong>
-          (the HISTORY layer) — its original project, experiment, group, and FRDR dataset (Q-code + DOI) —
-          all searchable too.
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Saline pair -->
+          <figure class="rounded-2xl border border-sand p-5">
+            <div class="flex items-center justify-center gap-3">
+              <video src="trial_saline.mp4" autoplay loop muted playsinline controls class="w-[44%] border-2 border-pine/60 bg-black/5"></video>
+              <span class="text-2xl text-ink/30">→</span>
+              <img src="pathplot_saline.png" alt="Locomotion path-plot of the saline session" class="w-[44%] border-2 border-pine/60 bg-white" />
+            </div>
+            <figcaption class="mt-3 text-center text-sm">
+              <span class="font-display font-600 text-pine">Saline</span> session — rat Q23U693033, injection 8<br>
+              <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
+            </figcaption>
+          </figure>
+
+          <!-- Quinpirole pair -->
+          <figure class="rounded-2xl border border-sand p-5">
+            <div class="flex items-center justify-center gap-3">
+              <video src="trial_quinpirole.mp4" autoplay loop muted playsinline controls class="w-[44%] border-2 border-clay/60 bg-black/5"></video>
+              <span class="text-2xl text-ink/30">→</span>
+              <img src="pathplot_quinpirole.png" alt="Locomotion path-plot of the quinpirole session" class="w-[44%] border-2 border-clay/60 bg-white" />
+            </div>
+            <figcaption class="mt-3 text-center text-sm">
+              <span class="font-display font-600 text-clay">Quinpirole</span> session — rat Q23U693032, injection 8<br>
+              <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="text-center text-sm text-ink/50 max-w-3xl mx-auto mt-6">
+          Each video and path-plot are of the <strong>same entire 55 min long session</strong> — raw behaviour on the
+          left, its paths of locomotion on the right. At 31× speed, the full 55-minute session plays in
+          <strong>1 min 47 s</strong>. Later, the toolbox can play the video and its track <em>in sync</em>.
         </p>
       </div>
     </section>
 
-    <!-- ===================== SEE A SESSION (matched video → path-plot) ===================== -->
-    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
-      <div class="max-w-3xl mx-auto text-center mb-10">
-        <h2 class="font-display text-3xl font-600 mb-4">What a session looks like</h2>
-        <p class="text-ink/70 leading-relaxed">
-          Each trial is a 55-minute recording of one rat in the open field, captured from above. From
-          that video the rat's position is extracted as a <strong>track file</strong> (XY coordinates over
-          time) and summarized as a <strong>path-plot</strong> of the whole session. These are the raw data
-          objects in the library, alongside smoothed track files and pre-computed summary measures.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Saline pair -->
-        <figure class="rounded-2xl border border-sand p-5">
-          <div class="flex items-center justify-center gap-3">
-            <video src="trial_saline.mp4" autoplay loop muted playsinline controls class="w-[44%] border-2 border-pine/60 bg-black/5"></video>
-            <span class="text-2xl text-ink/30">→</span>
-            <img src="pathplot_saline.png" alt="Locomotion path-plot of the saline session" class="w-[44%] border-2 border-pine/60 bg-white" />
-          </div>
-          <figcaption class="mt-3 text-center text-sm">
-            <span class="font-display font-600 text-pine">Saline</span> session — rat Q23U693033, injection 8<br>
-            <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
-          </figcaption>
-        </figure>
-
-        <!-- Quinpirole pair -->
-        <figure class="rounded-2xl border border-sand p-5">
-          <div class="flex items-center justify-center gap-3">
-            <video src="trial_quinpirole.mp4" autoplay loop muted playsinline controls class="w-[44%] border-2 border-clay/60 bg-black/5"></video>
-            <span class="text-2xl text-ink/30">→</span>
-            <img src="pathplot_quinpirole.png" alt="Locomotion path-plot of the quinpirole session" class="w-[44%] border-2 border-clay/60 bg-white" />
-          </div>
-          <figcaption class="mt-3 text-center text-sm">
-            <span class="font-display font-600 text-clay">Quinpirole</span> session — rat Q23U693032, injection 8<br>
-            <span class="text-xs text-ink/55">open-field video (31× speed) → its locomotion path-plot</span>
-          </figcaption>
-        </figure>
-      </div>
-      <p class="text-center text-sm text-ink/50 max-w-3xl mx-auto mt-6">
-        Each video and path-plot are of the <strong>same entire 55 min long session</strong> — raw behaviour on the
-        left, its paths of locomotion on the right. Later, the toolbox can play the video and its track <em>in sync</em>.
+    <!-- ===================== HOW IT'S ORGANIZED ===================== -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="font-display text-2xl font-600 mb-4">How it's organized</h2>
+      <p class="text-ink/70 leading-relaxed mb-4">
+        The annotation schema is instantiated as a relational database whose hub is the
+        <strong>session</strong>: every one of the 20,491 trials has a single record, linked to its
+        subject, apparatus, treatment, and procedure. That design lets a question like
+        <em>"all sessions where a rat with a nucleus-accumbens lesion received its 8th quinpirole
+        injection"</em> be answered across all experiments at once.
+      </p>
+      <p class="text-ink/70 leading-relaxed">
+        The library is a <strong>portal</strong> to these data — it helps you find, assemble, and
+        analyze them; the files themselves live in Canada's Federated Research Data Repository (FRDR).
       </p>
     </section>
 
@@ -272,22 +240,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ===================== ORGANIZED AS A DATABASE ===================== -->
-    <section class="max-w-4xl mx-auto px-6 py-16">
-      <h2 class="font-display text-2xl font-600 mb-4">How it's organized</h2>
-      <p class="text-ink/70 leading-relaxed mb-4">
-        The annotation schema is instantiated as a relational database whose hub is the
-        <strong>session</strong>: every one of the 20,491 trials has a single record, linked to its
-        subject, apparatus, treatment, and procedure. That design lets a question like
-        <em>"all sessions where a rat with a nucleus-accumbens lesion received its 8th quinpirole
-        injection"</em> be answered across all experiments at once.
-      </p>
-      <p class="text-ink/70 leading-relaxed">
-        The library is a <strong>portal</strong> to these data — it helps you find, assemble, and
-        analyze them; the files themselves live in Canada's Federated Research Data Repository (FRDR).
-      </p>
     </section>
 
     <!-- ===================== REUSE / CITE ===================== -->
