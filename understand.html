@@ -210,7 +210,7 @@
       </p>
       <p class="text-ink/70 leading-relaxed">
         The library is a <strong>portal</strong> to these data — it helps you find, assemble, and
-        analyze them; the files themselves live in Canada's Federated Research Data Repository (FRDR).
+        analyze them; the files themselves live in Canada's <a href="https://www.frdr-dfdr.ca/repo/" class="text-pine underline decoration-clay/40 hover:decoration-clay">Federated Research Data Repository</a> (FRDR) as the <a href="https://www.frdr-dfdr.ca/repo/collection/szechtmanlab" class="text-pine underline decoration-clay/40 hover:decoration-clay">Szechtman Lab Collection</a>.
       </p>
     </section>
 
@@ -227,16 +227,17 @@
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-parchment/10 rounded-xl p-6">
+            <h3 class="font-display text-lg font-600 mb-3">Treatments</h3>
+            <p class="text-sm text-parchment/75 mb-3"><span class="font-600 text-parchment">Drug Rx</span> — nine drugs (QNP, DPAT, mCPP, escitalopram, imipramine, clorgyline, ritanserin, CP809101, U69593) plus saline &amp; two vehicles, alone or in combination → 20 drug treatments (most: QNP 8,012, saline 7,551).</p>
+            <p class="text-sm text-parchment/75"><span class="font-600 text-parchment">Brain manipulations</span> — lesion / sham / unoperated, targeting NAc, BLA, OFC, IL, PIT.</p>
+          </div>
+          <div class="bg-parchment/10 rounded-xl p-6">
             <h3 class="font-display text-lg font-600 mb-2">Raw data objects</h3>
-            <p class="text-sm text-parchment/75">Video (.mpg) · track file (.csv) · path-plot (.gif) for each session — ~13 TB across 168,467 files.</p>
+            <p class="text-sm text-parchment/75">Captured for every session: video (.mpg), track file (.csv) of XY coordinates, and path-plot (.gif) — ~13 TB across 168,467 files.</p>
           </div>
           <div class="bg-parchment/10 rounded-xl p-6">
-            <h3 class="font-display text-lg font-600 mb-2">Treatments</h3>
-            <p class="text-sm text-parchment/75">Nine drugs (QNP, DPAT, mCPP, escitalopram, imipramine, clorgyline, ritanserin, CP809101, U69593) plus saline &amp; two vehicles — given alone or in combination — form 20 drug treatments (most trials: QNP 8,012, saline 7,551). Brain manipulations target NAc, BLA, OFC, IL, PIT (lesion / sham / unoperated).</p>
-          </div>
-          <div class="bg-parchment/10 rounded-xl p-6">
-            <h3 class="font-display text-lg font-600 mb-2">Smoothed tracks &amp; measures</h3>
-            <p class="text-sm text-parchment/75">Smoothed track files (pre-processed to remove digitizing noise) plus pre-computed checking, locomotion, spatial-dispersion, path-stereotypy and time-course measures.</p>
+            <h3 class="font-display text-lg font-600 mb-2">Derived (processed) data objects</h3>
+            <p class="text-sm text-parchment/75">Computed <em>from</em> the raw data: smoothed track files (noise-removed) and pre-computed summary measures (checking, locomotion, spatial dispersion, path stereotypy, time-course), plus assembled path-plot variants. Further measures can be generated in the toolbox.</p>
           </div>
         </div>
 
@@ -274,26 +275,40 @@
           <!-- repeated testing -->
           <div class="bg-parchment/10 rounded-xl p-5">
             <h4 class="font-display font-600 text-sm mb-3">Repeated testing — trials by injection #</h4>
-            <div class="flex items-end gap-[3px] h-28">
-              <div class="flex-1 bg-clay rounded-t" style="height:100%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:95%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:96%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:92%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:91%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:87%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:89%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:84%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:88%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:87%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:67%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:64%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:54%"></div>
-              <div class="flex-1 bg-clay rounded-t" style="height:47%"></div>
-              <div class="flex-1 bg-clay/70 rounded-t" style="height:10%"></div>
-              <div class="flex-1 bg-clay/70 rounded-t" style="height:2%"></div>
-              <div class="flex-1 bg-clay/70 rounded-t" style="height:1%"></div>
+            <div class="flex gap-1.5">
+              <div class="flex flex-col justify-between items-end text-[9px] text-parchment/45 h-28 w-7 shrink-0 pb-px">
+                <span>1,700</span><span>850</span><span>0</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-end gap-[3px] h-28 border-l border-b border-parchment/25 pl-1">
+                  <div class="flex-1 bg-clay rounded-t" style="height:97%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:97%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:96%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:96%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:91%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:91%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:91%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:91%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:92%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:93%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:76%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:71%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:60%"></div>
+                  <div class="flex-1 bg-clay rounded-t" style="height:49%"></div>
+                  <div class="flex-1 bg-clay/70 rounded-t" style="height:11%"></div>
+                  <div class="flex-1 bg-clay/70 rounded-t" style="height:2%"></div>
+                  <div class="flex-1 bg-clay/70 rounded-t" style="height:1%"></div>
+                </div>
+                <div class="flex gap-[3px] text-[9px] text-parchment/50 mt-1 pl-1">
+                  <span class="flex-1 text-center">1</span>
+                  <span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span>
+                  <span class="flex-1 text-center">8</span>
+                  <span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span><span class="flex-1"></span>
+                  <span class="flex-1 text-center">17</span>
+                </div>
+                <div class="text-center text-[10px] text-parchment/55 mt-0.5">Injection #</div>
+              </div>
             </div>
-            <div class="flex justify-between text-[10px] text-parchment/50 mt-1"><span>inj 1</span><span>8</span><span>17</span></div>
           </div>
 
         </div>
@@ -315,14 +330,14 @@
         </div>
         <div class="rounded-xl border border-sand p-6">
           <h3 class="font-display text-lg font-600 text-pine mb-2">Machine learning &amp; AI</h3>
-          <p class="text-sm text-ink/65">Each 55-minute session is 95,000+ position records. Predict the escalation of compulsive checking or the decline of exploration, find patterns across rats and treatments, flag outliers — even train generative models of OCD-like behaviour.</p>
+          <p class="text-sm text-ink/65">Each 55-minute session, at 30 frames per second, is 98,901 position records. Use the track records to predict the escalation of compulsive checking or the decline of exploration, find patterns across rats and treatments, flag outliers — even train generative models of OCD-like behaviour.</p>
         </div>
       </div>
 
       <!-- forewarning (gentle) -->
       <div class="mt-8 rounded-xl bg-clay/10 border border-clay/25 p-5 flex gap-3">
         <span class="text-clay text-xl leading-none">⚠</span>
-        <p class="text-sm text-ink/70">One thing to know up front: a session is defined by a dozen-plus independent variables, so two sessions that share one feature (say, “QNP”) are rarely the same session. Finding exactly what you need takes a little care — the search tools show you not just <em>how many</em> sessions match, but <em>how they differ</em>. <span class="text-ink/50">When you're ready to select data, we'll point you to the right path.</span></p>
+        <p class="text-sm text-ink/70">One thing to know up front: a session is defined by a dozen-plus independent variables, so two sessions that share one feature (say, “QNP”) are likely to differ on one or more of the other independent variables. Finding exactly what you need takes a little care — the search tools show you not just <em>how many</em> sessions match, but <em>how they differ</em>. <span class="text-ink/50">When you're ready to select data, we'll point you to the right path.</span></p>
       </div>
     </section>
 
